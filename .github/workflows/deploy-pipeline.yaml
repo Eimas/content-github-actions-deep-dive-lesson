@@ -45,18 +45,18 @@ jobs:
           name: zipped-bundle
           path: ${{ github.sha }}.zip
           
-publish:
-  runs-on: ubuntu-latest
-  - name: create release
-    uses: actions/crete-release@1
-    env:
-      GITHUB_TOKEN: ${{ secrets.github_token }}
-    with:
-      tag_name: ${{ github.run_number}}
-      release_name: Release from ${{ github.run_number}}
-      body: bla BLA bla
-      draft: false
-      prerelease: false
+  publish:
+    runs-on: ubuntu-latest
+    - name: create release
+      uses: actions/crete-release@1
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+      with:
+        tag_name: ${{ github.run_number}}
+        release_name: Release from ${{ github.run_number}}
+        body: bla BLA bla
+        draft: false
+        prerelease: false
       
     
 
